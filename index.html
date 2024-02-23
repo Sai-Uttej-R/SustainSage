@@ -5,19 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sustainsage - Find Sustainable Alternatives</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
-    <h1>Sustainsage</h1>
-    <form id="search-form">
-        <input type="text" id="search-input" placeholder="Enter a product...">
-        <button type="submit" id="search-button">Find Alternatives</button>
-    </form>
+<header>
+    <div class="container">
+        <div class="logo">Sustainsage</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <div id="search-results"></div>
+<div class="hero">
+    <div class="container">
+        <h1>We Provide Sustainable Alternatives</h1>
+        <div class="search">
+            <p>Search and Find</p>
+            <select id="search-type">
+                <option value="food">Food</option>
+                <option value="product">Product</option>
+            </select>
+            <input type="text" id="search-input" placeholder="Enter a search term...">
+            <button type="submit" id="search-button">Find Alternatives</button>
+        </div>
+        <div id="search-results" class="container"></div>
+    </div>
 </div>
+
+<footer>
+    <div class="container">
+        <p>Development Under Progress - &copy; <a href="https://www.linkedin.com/in/sai-uttej-r/" id="linkedin-link">Sai Uttej R</a></p>
+    </div>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="script.js"></script>

@@ -1,16 +1,22 @@
 $(document).ready(function() {
-    $('#search-form').submit(function(event) {
-        event.preventDefault(); // Prevent form submission
-        var query = $('#search-input').val().trim().toLowerCase(); // Get search query from input field
+    $('#search-button').click(function(event) {
+        event.preventDefault(); 
+        var query = $('#search-input').val().trim().toLowerCase(); 
+        var searchType = $('#search-type').val();
 
-        if (query) {
-            findAlternatives(query);
+        if (query && searchType) {
+            findAlternatives(query, searchType);
         }
     });
 
-    function findAlternatives(query) {
-        var url = 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=' + encodeURIComponent(query) + '&search_simple=1&json=1';
-        
+    function findAlternatives(query, searchType) {
+        var url = '';
+        if (searchType === 'food') {
+            url = 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=' + encodeURIComponent(query) + '&search_simple=1&json=1';
+        } else if (searchType === 'product') {
+            url = 'https://www.openproductdata.org/api/v1/products?barcode=' + encodeURIComponent(query);
+        }
+
         $.ajax({
             url: url,
             type: 'GET',
@@ -26,7 +32,7 @@ $(document).ready(function() {
 
     function displayResults(query, products) {
         var resultsContainer = $('#search-results');
-        resultsContainer.empty(); // Clear previous results
+        resultsContainer.empty(); 
 
         if (products.length > 0) {
             resultsContainer.append('<h2>Sustainable Alternatives for ' + query + '</h2>');
