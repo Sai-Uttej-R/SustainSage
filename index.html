@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sustainsage Search</title>
+    <title>Sustainsage - Find Sustainable Alternatives</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<form id="search-form">
-    <input type="text" id="search-input" placeholder="Enter a product...">
-    <button type="submit">Find Alternatives</button>
-</form>
+<div class="container">
+    <h1>Sustainsage</h1>
+    <form id="search-form">
+        <input type="text" id="search-input" placeholder="Enter a product...">
+        <button type="submit" id="search-button">Find Alternatives</button>
+    </form>
 
-<div id="search-results"></div>
+    <div id="search-results"></div>
+</div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="script.js"></script>
 
 </body>

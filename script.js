@@ -1,29 +1,40 @@
-document.getElementById('search-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-    var query = document.getElementById('search-input').value; // Get search query from input field
-    
-    // Call function to find sustainable alternatives based on user input
-    findAlternatives(query);
-});
+$(document).ready(function() {
+    $('#search-form').submit(function(event) {
+        event.preventDefault(); // Prevent form submission
+        var query = $('#search-input').val().trim().toLowerCase(); // Get search query from input field
 
-function findAlternatives(query) {
-    // Sample list of sustainable alternatives for demonstration purposes
-    var alternatives = {
-        'Plastic Water Bottle': ['Stainless Steel Water Bottle', 'Glass Water Bottle'],
-        'Disposable Plastic Cutlery': ['Bamboo Cutlery Set', 'Stainless Steel Cutlery'],
-        'Single-Use Plastic Bags': ['Reusable Cloth Bags', 'Biodegradable Bags']
-    };
+        if (query) {
+            findAlternatives(query);
+        }
+    });
 
-    var resultsContainer = document.getElementById('search-results');
-    resultsContainer.innerHTML = ''; // Clear previous results
-
-    var alternativesFound = alternatives[query];
-    if (alternativesFound) {
-        resultsContainer.innerHTML += '<h2>Sustainable Alternatives for ' + query + '</h2>';
-        alternativesFound.forEach(function(alternative) {
-            resultsContainer.innerHTML += '<p>' + alternative + '</p>';
+    function findAlternatives(query) {
+        var url = 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=' + encodeURIComponent(query) + '&search_simple=1&json=1';
+        
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                displayResults(query, data.products);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', error);
+            }
         });
-    } else {
-        resultsContainer.innerHTML = '<p>No sustainable alternatives found for ' + query + '</p>';
     }
-}
+
+    function displayResults(query, products) {
+        var resultsContainer = $('#search-results');
+        resultsContainer.empty(); // Clear previous results
+
+        if (products.length > 0) {
+            resultsContainer.append('<h2>Sustainable Alternatives for ' + query + '</h2>');
+            products.forEach(function(product) {
+                resultsContainer.append('<p>' + product.product_name + '</p>');
+            });
+        } else {
+            resultsContainer.append('<p>No sustainable alternatives found for ' + query + '</p>');
+        }
+    }
+});
