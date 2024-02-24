@@ -1,142 +1,49 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom right, #48c6ef, #6f86d6);
-    color: #fff;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 10px;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); 
-    padding: 10px 0;
-    z-index: 1000; 
-}
-
-header .container {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    font-size: 24px;
-}
-
-#logo-img{
-    height: 8vh;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    font-size: 2.5vh;
-}
-
-nav ul li {
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  header img {
+    height: 40px;
     margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ffd700; 
-}
-
-#linkedin-link{
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    font-size: larger;
-}
-
-#linkedin-link:hover {
-    font-weight: bold;
-    color: #ffd700;
-    text-decoration: none;
-}
-
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-}
-
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.search {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.search p {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-#search-type {
+  }
+  
+  header input[type="text"] {
+    flex-grow: 1;
     padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-right: 10px;
-}
-
-#search-input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    width: 70%;
-    max-width: 300px;
-    font-size: 16px;
-    margin-right: 10px;
-}
-
-#search-input::placeholder {
-    color: #aaa;
-}
-
-#search-input:focus {
-    outline: none;
-}
-
-#search-button {
+    border: 1px solid #ccc;
+  }
+  
+  header button {
     padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    border-radius: 5px;
-    background-color: #ffd700;
-    color: #333;
-    font-size: 16px;
     cursor: pointer;
-}
-
-footer {
-    background-color: rgba(0, 0, 0, 0.8); 
-    padding: 20px 0;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    font-size: 14px;
+  }
+  
+  #resultsContainer {
+    margin-top: 20px;
+  }
+  
+  .result {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .result h3 {
     margin: 0;
-}
+  }
+  
+  .result img {
+    max-width: 100%;
+    height: auto;
+  }
+  
