@@ -1,18 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sustainable Alternatives</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainsage - Find Sustainable Alternatives</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <img src="./assets/images/logosust-removebg-preview-blk.png" alt="Logo" style="height: 8vh;">
-    <input type="text" id="searchInput" placeholder="Search for a product...">
-    <button onclick="search()">Search</button>
-  </header>
-  <div id="resultsContainer"></div>
-  <script src="script.js"></script> 
+
+<header>
+    <div class="container">
+        <div class="logo"><a href="" style="text-decoration: none;color: white;font-weight: bold;"><img src="./assets/images/logosust-removebg-preview-wht.png" id="logo-img" alt="Sustainsage"></a></div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./pages/about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="container">
+        <h1>We Provide Sustainable Alternatives</h1>
+        <div class="search2">
+            <input type="text" id="searchInput" placeholder="Search for a product...">
+            <button onclick="search()">Search</button>
+            <div id="resultsContainer"></div>
+        </div>
+        <div class="search">
+            <p>Search and Find</p>
+            <select id="search-type">
+                <option value="food">Food</option>
+                <option value="product">Product</option>
+            </select>
+            <input type="text" id="search-input" placeholder="Enter a search term..like chicken, shirt, etc." />
+            <button type="submit" id="search-button">Find Alternatives</button>
+        </div>
+    </div>
+</div>
+<div id="search-results" class="container"></div>
+
+<footer>
+    <div class="container">
+        <p style="font-size: large;">Development Under Progress - &copy; <a href="https://www.linkedin.com/in/sai-uttej-r/" id="linkedin-link">Sai Uttej R</a></p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./script.js"></script>
+
 </body>
 </html>
