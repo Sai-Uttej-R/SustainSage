@@ -1,3 +1,4 @@
+/* Common styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -31,7 +32,7 @@ header .container {
     font-size: 24px;
 }
 
-#logo-img{
+#logo-img {
     height: 8vh;
 }
 
@@ -57,7 +58,7 @@ nav ul li a:hover {
     color: #ffd700; 
 }
 
-#linkedin-link{
+#linkedin-link {
     font-weight: bold;
     color: white;
     text-decoration: none;
@@ -139,4 +140,33 @@ footer {
 footer p {
     font-size: 14px;
     margin: 0;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav ul {
+        font-size: 18px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .search p {
+        font-size: 16px;
+    }
+
+    #search-type,
+    #search-input,
+    #search-button {
+        font-size: 14px;
+    }
 }
